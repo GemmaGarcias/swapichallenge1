@@ -1,23 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { getFilmsRequest } from './service/content.service';
 import './App.css';
 
 function App() {
-  return (
+  const [films, setFilms] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getFilmsRequest();
+      console.log(response)
+      setFilms(response.data);
+      setIsLoading(false);
+    }
+
+    fetchData();
+  }, [])
+  
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header">        
+      {isLoading && <p>Wait Im Loading comments for you</p>}
       </header>
     </div>
   );
