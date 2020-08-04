@@ -1,0 +1,21 @@
+.Films-container {
+    width: auto;
+}
+
+.Films-title {
+    color: #ffc107;
+}
+
+.Films-loading {
+    color: white;
+    font-size: calc(10px + 2vmin);
+  }
+
+.Films-items {
+    background-color: white;
+    color: #282c34;
+    border-radius: 5px;
+    padding: 2vw;
+    margin: 2vw;
+    text-align: left;
+}
