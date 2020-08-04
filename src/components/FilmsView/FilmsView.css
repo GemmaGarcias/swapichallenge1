@@ -1,5 +1,6 @@
 .Films-container {
     width: auto;
+    padding: 0 5vw 5vw 5vw;
 }
 
 .Films-title {
@@ -10,12 +11,3 @@
     color: white;
     font-size: calc(10px + 2vmin);
   }
-
-.Films-items {
-    background-color: white;
-    color: #282c34;
-    border-radius: 5px;
-    padding: 2vw;
-    margin: 2vw;
-    text-align: left;
-}
