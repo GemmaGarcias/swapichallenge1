@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getCharactersRequest } from '../../service/content.service';
+import SimpleCard from '../common/SimpleCard';
+import PropTypes from 'prop-types';
 
 function FilmsCharacters(props) {
 
@@ -18,13 +20,21 @@ function FilmsCharacters(props) {
   }, [])
   
     return (
-    <div className="Characters-container"> 
+    <div> 
         <h4>CHARACTERS:</h4>
-        {characters.length && characters.map((character, i) => (
-            <p key={i}>{character.name}</p>
-        ))}
+        <div className="Characters-container">
+            {characters.length && characters.map((character, i) => (
+                <SimpleCard key={i} data={character}/>
+            ))}
+        </div>
     </div>
   );
+}
+
+FilmsCharacters.propTypes = {
+    film: PropTypes.shape({
+      characters: PropTypes.object
+    })
 }
 
 export default FilmsCharacters;

@@ -1,4 +1,5 @@
 @import './components/FilmsView/FilmsView.css';
+@import './components/FilmsCharacters/FilmsCharacters.css';
 
 body {
   background-color: #282c34;

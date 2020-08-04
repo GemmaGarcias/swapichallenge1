@@ -56,5 +56,6 @@ SimpleAccordion.propTypes = {
       director: PropTypes.string,
       producer: PropTypes.string,
       opening_crawl: PropTypes.string
-    })
+    }),
+    children: PropTypes.element
 }
