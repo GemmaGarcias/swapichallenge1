@@ -23,7 +23,7 @@ function FilmsCharacters(props) {
         }
 
         if(isLoading && characters.length === 0) fetchData();
-    }, [isLoading, characters.length, film.characters])
+    }, [isLoading, characters, film.characters])
 
     const getOtherFilms = async (data) => {
         let aFilms = [];
