@@ -4,8 +4,8 @@ import SimpleCard from '../common/SimpleCard';
 import PropTypes from 'prop-types';
 
 function FilmsCharacters(props) {
-
     const [characters, setCharacters] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const { film } = props;
 
     useEffect(() => {
@@ -18,9 +18,10 @@ function FilmsCharacters(props) {
                 
                 setCharacters(characters => [...characters, response]);
             }));
+        setIsLoading(false);
         }
 
-        fetchData();
+        if(isLoading) fetchData();
     }, [])
 
     const getOtherFilms = async (data) => {
@@ -37,20 +38,17 @@ function FilmsCharacters(props) {
     }
   
     return (
-    <div> 
-        <h4>CHARACTERS:</h4>
-        <div className="Characters-container">
-            {characters.length && characters.map((character, i) => (
-                <SimpleCard key={i} data={character}/>
-            ))}
-        </div>
+    <div className="Characters-container">
+        {characters && characters.map((character, i) => (
+            <SimpleCard key={i} data={character}/>
+        ))}
     </div>
   );
 }
 
 FilmsCharacters.propTypes = {
     film: PropTypes.shape({
-      characters: PropTypes.object
+      characters: PropTypes.array
     })
 }
 

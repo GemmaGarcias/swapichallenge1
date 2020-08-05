@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 export const getFilmsRequest = async () => {
-    const apiFilm = 'https://swapi.dev/api/films';
+    const apiFilm = 'https://swapi.dev/api/films/';
 
     try {
-        return await axios({ method: 'get', url: apiFilm });
+        const response = await axios({ method: 'get', url: apiFilm });
+        return response;
     } catch (error) {
         return error;
     }

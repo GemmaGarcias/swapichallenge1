@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
@@ -6,6 +6,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleAccordion(props) {
   const classes = useStyles();
+  const [displayCharacters, setDisplayCharacters] = useState(false);
   const { title, release_date, director, producer, opening_crawl } = props.data;
 
   return (
@@ -42,7 +44,10 @@ export default function SimpleAccordion(props) {
           </ul>
         </AccordionDetails>
         <AccordionDetails>
-          {props.children}
+          <div>
+            <Button onClick={() => setDisplayCharacters(!displayCharacters)}> See Characters...</Button>
+            {displayCharacters && props.children}
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>
