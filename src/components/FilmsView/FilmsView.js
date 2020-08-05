@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { getFilmsRequest } from '../../service/content.service';
 import SimpleAccordion from '../common/SimpleAccordion';
 import FilmsCharacters from '../FilmsCharacters/FilmsCharacters';
+import Button from '@material-ui/core/Button';
 
 function FilmsView() {
 
-  const [films, setFilms] = useState([]);
+  const [films, setFilms] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [displayCharacters, setDisplayCharacters] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await getFilmsRequest();
-      console.log(response)
+
       setFilms(response.data);
       setIsLoading(false);
     }
@@ -24,11 +26,14 @@ function FilmsView() {
         {isLoading ? <p className="Films-loading">Wait Im Loading comments for you</p> : <h1 className={"Films-title"}>FILMS</h1>}
         
         <div className="Films-container">
-            {films.results && films.results.map((film, i) => (
+            {films ? films.results.map((film, i) => (
                 <SimpleAccordion key={i} data={film}>
-                  <FilmsCharacters film={film}/>
+                  <div>
+                    <Button onClick={setDisplayCharacters(!displayCharacters)}> See Characters...</Button>
+                    {displayCharacters && <FilmsCharacters film={film}/>}
+                  </div>
                 </SimpleAccordion> 
-            ))}
+            )) : <div>Error</div>}
         </div>
     </div>
   );

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    maxWidth: '200px',
     margin: '1vw'
   },
   title: {
@@ -21,28 +21,29 @@ const useStyles = makeStyles({
 
 export default function SimpleCard(props) {
   const classes = useStyles();
-  const { data } = props;
+  const { name, birth_year, height, mass, films, homeworld } = props.data;
+  const otherFilms = films.join();
 
   return (
     <Card className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2" className={classes.pos} >
-          {data.name}
+          {name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Birthdate: ${data.birth_year}`}
+          {`Birthdate: ${birth_year}`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Height: ${data.height} cm`}
+          {`Height: ${height} cm`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Weight: ${data.mass} kg`}
+          {`Weight: ${mass} kg`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Other movies: ${data.mass} kg`}
+          {`Other movies: ${otherFilms}`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Native planet: ${data.mass} kg`}
+          {`Native planet: ${homeworld}`}
         </Typography>
       </CardContent>
     </Card>
@@ -54,6 +55,8 @@ SimpleCard.propTypes = {
       name: PropTypes.string,
       birth_year: PropTypes.string,
       height: PropTypes.string,
-      mass: PropTypes.string
+      mass: PropTypes.string,
+      films: PropTypes.array,
+      homeworld: PropTypes.string
     })
 }

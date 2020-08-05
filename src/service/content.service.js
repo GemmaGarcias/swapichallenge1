@@ -10,7 +10,7 @@ export const getFilmsRequest = async () => {
     }
 };
 
-export const getCharactersRequest = async (url) => {
+export const getDataRequest = async (url) => {
     try {
         return await axios({ method: 'get', url });
     } catch (error) {
