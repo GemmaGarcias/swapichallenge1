@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getDataRequest } from '../../service/content.service';
 import SimpleCard from '../common/SimpleCard';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 
 function FilmsCharacters(props) {
@@ -21,8 +22,8 @@ function FilmsCharacters(props) {
         setIsLoading(false);
         }
 
-        if(isLoading) fetchData();
-    }, [])
+        if(isLoading && characters.length === 0) fetchData();
+    }, [isLoading])
 
     const getOtherFilms = async (data) => {
         let aFilms = [];
@@ -38,11 +39,13 @@ function FilmsCharacters(props) {
     }
   
     return (
-    <div className="Characters-container">
+    <Grid container spacing={2}>
         {characters && characters.map((character, i) => (
-            <SimpleCard key={i} data={character}/>
+            <Grid key={i} xs={12} sm={12} md={4} item>
+                <SimpleCard data={character}/>
+            </Grid>
         ))}
-    </div>
+    </Grid>
   );
 }
 

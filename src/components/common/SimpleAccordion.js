@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(18),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  pos: {
+    marginBottom: 12,
+  },
 }));
 
 export default function SimpleAccordion(props) {
@@ -37,15 +40,15 @@ export default function SimpleAccordion(props) {
         </AccordionSummary>
         <AccordionDetails>
           <ul>
-            <li><strong>Release date: </strong>{release_date}</li>
-            <li><strong>Director: </strong>{director}</li>
-            <li><strong>Producers: </strong>{producer}</li>
-            <li><strong>Opening: </strong>{opening_crawl}</li>
+            <li><Typography className={classes.pos}><strong>Release date: </strong>{release_date}</Typography></li>
+            <li><Typography className={classes.pos}><strong>Director: </strong>{director}</Typography></li>
+            <li><Typography className={classes.pos}><strong>Producers: </strong>{producer}</Typography></li>
+            <li><Typography className={classes.pos}><strong>Opening: </strong>{opening_crawl}</Typography></li>
           </ul>
         </AccordionDetails>
         <AccordionDetails>
           <div>
-            <Button onClick={() => setDisplayCharacters(!displayCharacters)}> See Characters...</Button>
+            <Button onClick={() => setDisplayCharacters(true)} disabled={displayCharacters}> See Characters...</Button>
             {displayCharacters && props.children}
           </div>
         </AccordionDetails>

@@ -8,8 +8,10 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '200px',
-    margin: '1vw'
+    maxWidth: '100%',
+    height: '300px',
+    margin: '1vw',
+    fontSize: 12,
   },
   title: {
     fontSize: 14,
@@ -31,19 +33,19 @@ export default function SimpleCard(props) {
           {name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Birthdate: ${birth_year}`}
+          <strong>Birthdate: </strong>{birth_year}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Height: ${height} cm`}
+          <strong>Height: </strong>{`${height} cm`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Weight: ${mass} kg`}
+          <strong>Weight: </strong>{`${mass} kg`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Other movies: ${otherFilms}`}
+          <strong>Other movies: </strong>{otherFilms}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Native planet: ${homeworld}`}
+          <strong>Native planet: </strong>{homeworld}
         </Typography>
       </CardContent>
     </Card>
