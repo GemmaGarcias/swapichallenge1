@@ -28,11 +28,11 @@ function FilmsView() {
             FILMS
           </Typography>}
         <Container maxWidth="lg">
-            {films && films.results.map((film, i) => (
+            {films ? films.results.map((film, i) => (
                 <SimpleAccordion key={i} data={film}>
                   <FilmsCharacters film={film}/>
                 </SimpleAccordion> 
-            ))}
+            )) : <div></div>}
         </Container>
     </div>
   );
