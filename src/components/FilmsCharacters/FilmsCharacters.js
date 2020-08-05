@@ -41,7 +41,7 @@ function FilmsCharacters(props) {
     return (
     <Grid container spacing={2}>
         {characters && characters.map((character, i) => (
-            <Grid key={i} xs={12} sm={12} md={4} item>
+            <Grid key={i} xs={12} sm={12} md={6} lg={4} item>
                 <SimpleCard data={character}/>
             </Grid>
         ))}
