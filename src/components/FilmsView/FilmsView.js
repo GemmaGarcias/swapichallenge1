@@ -3,6 +3,7 @@ import { getFilmsRequest } from '../../service/content.service';
 import SimpleAccordion from '../common/SimpleAccordion';
 import FilmsCharacters from '../FilmsCharacters/FilmsCharacters';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 function FilmsView() {
 
@@ -23,8 +24,10 @@ function FilmsView() {
     return (
     <div className="Films-container"> 
         {isLoading ? <p className="Films-loading">Wait Im Loading comments for you</p> 
-        : <h1 className={"Films-title"}>FILMS</h1>}
-        <Container maxWidth="l">
+        : <Typography variant="h5" component="h2" className={"Films-title"} >
+            FILMS
+          </Typography>}
+        <Container maxWidth="lg">
             {films && films.results.map((film, i) => (
                 <SimpleAccordion key={i} data={film}>
                   <FilmsCharacters film={film}/>
