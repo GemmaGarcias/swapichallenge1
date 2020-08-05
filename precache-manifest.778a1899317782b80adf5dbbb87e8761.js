@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da86defd9f8091ac856b2c27cad47de8",
+    "revision": "227bf3ba191e73107fcbc837cd0191e3",
     "url": "/swapichallenge1/index.html"
   },
   {
-    "revision": "ce2ca7c7760956fd609d",
+    "revision": "ab2d40a3aa13487867f6",
     "url": "/swapichallenge1/static/css/main.d70dcfa8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swapichallenge1/static/js/2.282d0d99.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ce2ca7c7760956fd609d",
-    "url": "/swapichallenge1/static/js/main.9cebe25a.chunk.js"
+    "revision": "ab2d40a3aa13487867f6",
+    "url": "/swapichallenge1/static/js/main.edba54b8.chunk.js"
   },
   {
     "revision": "09aa10f20459e62f44df",
