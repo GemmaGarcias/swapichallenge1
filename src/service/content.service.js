@@ -12,8 +12,9 @@ export const getFilmsRequest = async () => {
 };
 
 export const getDataRequest = async (url) => {
+    let newHttpsUrl = url.replace('http', 'https');
     try {
-        return await axios({ method: 'get', url });
+        return await axios({ method: 'get', url: newHttpsUrl });
     } catch (error) {
         return error;
     }
