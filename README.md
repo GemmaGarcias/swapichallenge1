@@ -21,3 +21,5 @@ npm install
 ```
 npm run start
 ```
+
+Tou can preview page [here](https://gemmagarcias.github.io/swapichallenge1/)
