@@ -7,7 +7,7 @@
 * Fork and clone the project:
 
 ```
-git clone https://github.com/GemmaGarcias/MovieDB-challenge.git
+git clone https://github.com/GemmaGarcias/swapichallenge1.git
 ```
 
 * Then install the dependencies:
